@@ -70,7 +70,7 @@ const ProductsDetails = ({productId}) => {
     return (
         <div className='p-6 '>
             {selectedProduct &&(
-                <div className='max-w-6xl mx-auto bg-white p-8 rounded-lg'>
+                <div className='max-w-full sm:max-w-3xl md:max-w-6xl mx-auto bg-white p-4 sm:p-6 md:p-8 rounded-lg'>
                     <div className='flex flex-col md:flex-row'>
                         <div className='hidden md:flex flex-col space-y-4 mr-6 '>
                             {selectedProduct.images.map((image, index) => (
@@ -141,7 +141,7 @@ const ProductsDetails = ({productId}) => {
                             <button onClick={handleAddtoCart} disabled={isButtonDisabled} className={`bg-black text-white py-2 px-6  rounded w-full mb-4 ${isButtonDisabled ? "cursor-not-allowed opacity-50" : "hover:bg-gray-900"}`}>{isButtonDisabled ? "Adding..." : "ADD TO CART"}</button>
                             <div className='mt-10 text-gray-700'>
                                 <h3 className='text-xl font-bold mb-4 '>Characteristics:</h3>
-                                <table className='w-ful text-left text-sm text-gray-600'>
+                                <table className='w-full text-left text-sm text-gray-600'>
                                     <tbody>
                                         <tr>
                                             <td className='py-1' >Brand</td>

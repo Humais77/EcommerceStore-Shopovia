@@ -33,7 +33,7 @@ const Home = () => {
     fetchBestSeller()
   },[dispatch]);
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Hero/>
       <GenderCollectionSection/>
       <NerArrivals/>

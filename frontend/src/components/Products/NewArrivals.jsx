@@ -95,7 +95,7 @@ const NerArrivals = () => {
                     </button>
                 </div>
             </div>
-            <div ref={scrollRef} className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${isDragging ? "cursor-grabbing" : "cursor-grab"}`} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUpOrLeave} onMouseLeave={handleMouseLeave}>
+            <div ref={scrollRef} className={` overflow-x-scroll flex space-x-6 relative ${isDragging ? "cursor-grabbing" : "cursor-grab"}`} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUpOrLeave} onMouseLeave={handleMouseLeave}>
                 {newArrivals.map((product) => (
                     <div key={product._id} className='min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative'>
                         <img src={product.images[0]?.url} alt={product.images[0]?.alttext || product.name}

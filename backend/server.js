@@ -16,7 +16,23 @@ const adminOrderRoutes =require("./routes/adminOrderRoutes")
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:5173' })); 
+const allowedOrigins = [
+  'http://localhost:5173', // for local dev
+  'https://ecommerce-store-shopovia-2aqj.vercel.app' // your deployed frontend
+];
+
+app.use(cors({
+  origin: function(origin, callback){
+    // allow requests with no origin (like mobile apps, curl)
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 const PORT  = process.env.PORT || 5234;
